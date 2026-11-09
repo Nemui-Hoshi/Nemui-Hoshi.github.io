@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+
+    --dark: #171b20;
+    --panel: #222a31;
+    --light: #e9e8e2;
+    --blue: #8298a5;
+    --accent: #b5c5cb;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: "Georgia", serif;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    height: 5rem;
+    padding: 0 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #111519;
+    border-bottom: 1px solid #53616a;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 60%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    text-align: center;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+    padding: 8%;
+
+    background:
+        linear-gradient(90deg, rgba(15, 20, 25, 0.95), rgba(15, 20, 25, 0.2)),
+        url("./assets/victoria-group.webp");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-family: monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: 0.15rem;
+}
+
+.hero-content > p:not(.eyebrow) {
+    font-size: 1.2rem;
+    color: #c5cbd0;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+
+    border: 1px solid var(--blue);
+    color: var(--light);
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.hero-button:hover {
+    background-color: var(--blue);
+    color: var(--dark);
+}
+
+/* SECTION HEADING */
+
+.section-heading {
+    text-align: center;
+    padding: 4rem 1rem 2rem;
+}
+
+.section-heading h2,
+.services h2,
+.recruitment h2 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+/* MAIN GRID LAYOUT */
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, minmax(400px, auto));
+
+    gap: 1.5rem;
+    padding: 2rem 5%;
+}
+
+/* STAFF CARDS */
+
+.staff-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+
+    min-height: 550px;
+    overflow: hidden;
+
+    background-color: var(--panel);
+    border: 1px solid #414d56;
+}
+
+/* CHARACTER IMAGES */
+
+.staff-card > img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+/* CARD INFORMATION */
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    white-space: nowrap;
+
+    color: var(--blue);
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.card-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.card-info h4 {
+    margin-top: 0;
+    color: var(--blue);
+    font-family: monospace;
+    letter-spacing: 0.1rem;
+}
+
+.card-info p {
+    max-width: 450px;
+    color: #c5cbd0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.card-info a {
+    color: var(--light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--blue);
+    padding-bottom: 0.4rem;
+    margin-top: 0.5rem;
+    font-family: monospace;
+}
+
+.card-info a:hover {
+    color: var(--blue);
+}
+
+/* SERVICES */
+
+.services {
+    text-align: center;
+    padding: 5rem 5%;
+    background-color: #202830;
+}
+
+.service-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    margin-top: 3rem;
+}
+
+.service-list div {
+    padding: 1.5rem;
+    border: 1px solid #53616a;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+/* RECRUITMENT */
+
+.recruitment {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.recruitment a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid var(--blue);
+    padding-bottom: 0.5rem;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 5%;
+    background-color: #101417;
+    border-top: 1px solid #53616a;
+}
+
+footer p {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #aab3b9;
+}
+
+
+@media screen and (max-width: 720px) {
+
+    :root {
+        font-size: 12px;
+    }
+
+    nav {
+        height: 5rem;
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        width: 75%;
+        justify-content: space-evenly;
+    }
+
+    nav a {
+        font-size: 0.7rem;
+        letter-spacing: 0;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: 2rem;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .staff-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .staff-card {
+        min-height: calc(100svh - 5rem);
+        grid-template-columns: 1fr;
+        grid-template-rows: 55% 45%;
+    }
+
+    .staff-card > img {
+        height: 100%;
+    }
+
+    .card-info {
+        padding: 1rem;
+    }
+
+    .card-info h3 {
+        font-size: 2rem;
+    }
+
+    .service-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .service-list div {
+        width: 100%;
+    }
+
+    /* MOBILE FOOTER */
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
